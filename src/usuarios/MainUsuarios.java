@@ -1,9 +1,11 @@
 package usuarios;
-
+/**
+ * @author YosyGIT
+ */
 public class MainUsuarios {
     public static void main(String[] args) {
-            Usuario antonio = new Usuario("Antonio","12345");
+            Usuario user1 = new Usuario("Antonio","12345");
 
-            antonio.mostrarDatos();
+            user1.mostrarDatos();
     }
 }
