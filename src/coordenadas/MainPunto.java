@@ -6,6 +6,6 @@ public class MainPunto {
         Punto p2 = new Punto();
 
         p1.cambiarCoods(34.5,67.8);
-        p2.copiar(p1);
+        p2.copiar();
     }
 }
