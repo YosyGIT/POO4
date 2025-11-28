@@ -51,6 +51,10 @@ public class Punto {
         this.y = y;
     }
 
+    /**
+     * Metodo que devuelve la ubicación actual del punto
+     * @return: Devuelve las coordenadas
+     */
     public Punto copiar(){
         return new Punto(this.x, this.y);
     }
@@ -62,8 +66,6 @@ public class Punto {
      */
     public boolean iguales(Punto p){
         boolean comprobacion = (this.x == p.x && this.y == p.y);
-        System.out.print("El punto X e Y son iguales?: ");
-
         return comprobacion;
     }
 
@@ -72,8 +74,8 @@ public class Punto {
      * @param p: El objeto con el que sumamos X e Y.
      */
     public void sumaCoords(Punto p){
-        p.x = this.x + p.x;
-        p.y = this.y + p.y;
+        this.x = this.x + p.x;
+        this.y = this.y + p.y;
     }
 
     /**
@@ -87,5 +89,13 @@ public class Punto {
         double diferenciaY = Math.pow(Math.max(p.getY(), this.y) - Math.min(p.getY(), this.y), 2);
 
         return Math.sqrt(diferenciaX + diferenciaY);
+    }
+
+    @Override
+    public String toString() {
+        return "Punto{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
     }
 }
