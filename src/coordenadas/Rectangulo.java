@@ -60,6 +60,17 @@ public class Rectangulo {
         }
     }
 
+    public void dibujar(char caracter){
+        for (int i = 0; i <= altura; i++){
+            for (int j = 0; j <= anchura; j++){
+                System.out.print(caracter);
+            }
+            System.out.println();
+        }
+    }
 
+    public void interior(Punto esquina){
+
+    }
 
 }

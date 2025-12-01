@@ -1,9 +1,13 @@
 package coordenadas;
+import java.util.*;
 /**
  * @author YosyGIT
  */
 public class MainPunto {
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        char caracter;
+
         Punto p1 = new Punto(-5,2);
         Punto p2 = new Punto(6,3);
 
@@ -22,5 +26,10 @@ public class MainPunto {
         Rectangulo r1 = new Rectangulo(9,5,p1);
 
         r1.dibujar();
+
+        System.out.println("Introduce un caracter para dibujar el rectangulo: ");
+        caracter = in.next().charAt(0);
+
+
     }
 }
