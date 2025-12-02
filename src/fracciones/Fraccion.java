@@ -89,15 +89,28 @@ public class Fraccion {
             suma.numerador = this.numerador + fraccion.numerador;
             suma.denominador = fraccion.denominador;
         }else {
-            int mcm1 = Fraccion.mcm(this.numerador,this.denominador);
-            int mcm2 = Fraccion.mcm(fraccion.numerador,fraccion.denominador);
-            this.numerador /= mcm1;
-            this.denominador /= mcm1;
-            fraccion.numerador /= mcm2;
-            fraccion.denominador /= mcm2;
-            suma.numerador = this.numerador + fraccion.numerador;
-            suma.denominador = this.denominador + fraccion.denominador;
+            int comunDenominador = Fraccion.mcm(this.denominador,fraccion.denominador);
+            int numerador1 = this.numerador*(comunDenominador / this.numerador);
+            int numerador2 = fraccion.numerador*(comunDenominador / fraccion.denominador);
+            suma.denominador = comunDenominador;
+            suma.numerador = numerador1 + numerador2;
         }
         return suma;
     }
+
+    public Fraccion restar(Fraccion fraccion){
+        Fraccion resta = new Fraccion();
+        if (this.denominador == fraccion.denominador){
+            resta.numerador = this.numerador - fraccion.numerador;
+            resta.denominador = fraccion.denominador;
+        }else{
+            int comunDenominador = Fraccion.mcm(this.denominador,fraccion.denominador);
+            int numerador1 = this.numerador*(comunDenominador / this.numerador);
+            int numerador2 = fraccion.numerador*(comunDenominador / fraccion.denominador);
+            resta.denominador = comunDenominador;
+            resta.numerador = numerador1 - numerador2;
+        }
+        return resta;
+    }
+
 }
