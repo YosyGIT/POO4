@@ -14,12 +14,18 @@ public class Baraja  {
         }
     }
 
-    public void modificarBaraja(){
-        int i = 0;
-        for (int p = 0; p < 4; p++) {
-            for (int v = 0; v < 10; v++) {
-
-            }
+    public void barajar(){
+        int pos;
+        int pos2;
+        Carta c1 = new Carta();
+        Carta c2 = new Carta();
+        for (int p = 0; p < 250; p++) {
+            pos = (int)(Math.random() * (39 + 1));
+            pos2 = (int)(Math.random() * (39 + 1));
+            c1 = this.baraja[pos];
+            c2 = this.baraja[pos2];
+            this.baraja[pos2] = c1;
+            this.baraja[pos] = c2;
         }
     }
 
