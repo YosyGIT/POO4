@@ -1,5 +1,8 @@
 package cartas;
 
+/**
+ * @author YosyGIT
+ */
 public class Carta {
     private int palo;
     private int valor;
@@ -7,13 +10,12 @@ public class Carta {
     private static String[] palos = {"Oros", "Bastos", "Espadas", "Copas"};
     private static String[] valores = {"As","2","3","4","5","6","7","Sota","Caballo","Rey"};
 
-    public Carta(int palo){
-        if (palo >= 0 && palo <= 3){
-            this.palo = palo;
-        }
-        this.valor = 1;
-    }
-
+    /**
+     * Estos tres contructores te dan posibilidad de crear la carte dando parametros
+     * o no dandoles y asignando por defecto As de Oros.
+     * @param palo
+     * @param valor
+     */
     public Carta(int palo, int valor){
         if (palo >= 0 && palo <= 3){
             this.palo = palo;
@@ -21,6 +23,13 @@ public class Carta {
         if (valor >= 0 && valor <= 9){
             this.valor = valor;
         }
+    }
+
+    public Carta(int palo){
+        if (palo >= 0 && palo <= 3){
+            this.palo = palo;
+        }
+        this.valor = 0;
     }
 
     public Carta(){

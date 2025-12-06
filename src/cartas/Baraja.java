@@ -1,5 +1,5 @@
 package cartas;
-
+import java.util.*;
 public class Baraja  {
     private Carta[] baraja;
 
@@ -8,17 +8,16 @@ public class Baraja  {
         int i = 0;
         for (int p = 0; p < 4; p++) {
             for (int v = 0; v < 10; v++) {
-                this.baraja[i] = new Carta(p,v);
+                this.baraja[i] = new Carta();
+                this.baraja[i].modificar(p, v);
                 i++;
             }
         }
     }
 
     public void barajar(){
-        int pos;
-        int pos2;
-        Carta c1 = new Carta();
-        Carta c2 = new Carta();
+        int pos, pos2;
+        Carta c1, c2;
         for (int p = 0; p < 250; p++) {
             pos = (int)(Math.random() * (39 + 1));
             pos2 = (int)(Math.random() * (39 + 1));
@@ -29,11 +28,7 @@ public class Baraja  {
         }
     }
 
-    public void escribir(){
-        int i = 0;
-        while(i != 40){
-            System.out.println("Carta " + (i+1) + ": " + baraja[i].pasarATexto());
-            i++;
-        }
+    public Carta[] escribir(){
+        return this.baraja;
     }
 }
