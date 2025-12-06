@@ -1,5 +1,8 @@
 package cartas;
 
+/**
+ * @author YosyGIT
+ */
 public class MainCartas {
     public static void main(String[] args) {
         Baraja baraja1 = new Baraja();
