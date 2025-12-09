@@ -1,15 +1,18 @@
 package colapila;
 
+/**
+ * @author YosyGIT
+ */
 public class Pila {
     private String[] datos = new String [50];
-    private static int contador = -1;
+    private int contador = 0;
 
     public Pila (){
 
     }
 
     public boolean full (){
-        return contador == 50;
+        return contador == 49;
     }
 
     public boolean empty (){
@@ -17,15 +20,19 @@ public class Pila {
     }
 
     public void push (String teclado){
-        contador++;
-        this.datos[contador] = teclado;
+        if (contador < datos.length){
+            this.datos[contador] = teclado;
+            contador++;
+        }
     }
 
     public String pop (){
-        String salida = datos[contador];
-        int copiaCont = contador;
-        datos[contador] = "";
-        contador--;
+        String salida = null;
+        if (!empty()){
+            salida = this.datos[contador];
+            datos[contador] = "";
+            contador--;
+        }
         return salida;
     }
 
@@ -39,7 +46,24 @@ public class Pila {
         for (int i = 0; i <= contador; i++){
             datos[i] = "";
         }
-        contador = -1;
+        contador = 0;
     }
 
+    public int available(){
+        return datos.length - (contador + 1);
+    }
+
+    public Pila add(Pila p){
+        Pila fusion = new Pila();
+        int calculoEspacios;
+        for (int i = 0; i <= this.contador; i++){
+            fusion.push(this.datos[i]);
+        }
+        for (int j = 0; j < p.contador; j++){
+            if (!fusion.full()){
+                fusion.push(p.datos[j]);
+            }
+        }
+        return fusion;
+    }
 }
