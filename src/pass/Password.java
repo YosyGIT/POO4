@@ -31,7 +31,10 @@ public class Password {
                 car2 = arrayPass[posRandom];
                 arrayPass[posicionSuap] = car2;
                 arrayPass[posRandom] = car1;
+            }else {
+                posicionSuap = 0;
             }
+            posicionSuap++;
         }
         pass = new String(arrayPass);
         this.password = pass;
