@@ -12,7 +12,7 @@ public class Pila {
     }
 
     public boolean full (){
-        return contador == 49;
+        return contador == 50;
     }
 
     public boolean empty (){
